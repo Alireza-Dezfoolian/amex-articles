@@ -1,0 +1,20 @@
+@import "styles";
+@import "constants";
+
+body,
+html {
+    .font-helvetica();
+    background-color: @lightgrey;
+}
+
+.app-wrapper {
+    margin: 0 auto;
+    width: @width;
+    outline: 1px solid lightgrey;
+}
+
+@media screen and (max-width: @width) {
+    .app-wrapper {
+        width: 100%;
+    }
+}

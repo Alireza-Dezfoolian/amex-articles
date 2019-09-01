@@ -1,0 +1,27 @@
+@public-url: "/replaced/with/config-overrides.js";
+
+/**
+ * Mixin to use `Helvetica` font
+ *
+ * @example
+ * .selector {
+ *   .font-helvetica();
+ * }
+ */
+.font-helvetica() {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/**
+ * Mixin to use an image as a background, using the @public-url
+ * Using this mixin means we can update the path at any time without rewriting any other code
+ *
+ * @example
+ * .selector {
+ *   .background-image("/img/icon.png");	// this would evaluate to: `background-image: url("/asset-path/img/icon");` if PUBLIC_URL === "/asset-path"
+ * }
+ *
+ */
+.background-image(@asset) {
+	background-image: url("@{public-url}@{asset}");
+}
